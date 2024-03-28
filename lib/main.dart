@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'pages/login_page.dart';
+import 'themes/theme_provider.dart';
 
+// Entry point for the Flutter application. Initializes the app with a ChangeNotifierProvider wrapping a ThemeProvider.
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
+  // A function that builds and returns a MaterialApp widget based on the provided BuildContext.
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LoginPage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
