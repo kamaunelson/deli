@@ -1,6 +1,6 @@
 # deli
 
-A new Flutter project.
+A delivery application.
 
 ## Getting Started
 
