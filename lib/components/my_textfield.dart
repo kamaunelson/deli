@@ -13,9 +13,17 @@ class MyTextField extends StatelessWidget {
   });
 
   @override
+  /// Builds and returns a `TextField` widget with the given `controller`, `obscureText`, and styled `InputDecoration`.
+  ///
+  /// The `controller` parameter is used to control the text being edited in the `TextField`.
+  /// The `obscureText` parameter determines whether the text in the `TextField` should be obscured.
+  ///
+  /// Returns a `TextField` widget with the specified properties.
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: TextField(
+        controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
@@ -24,7 +32,11 @@ class MyTextField extends StatelessWidget {
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Theme.of(context).colorScheme.primary),
         ),
+        hintText: hintText,
+        hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
         ),
+      ),
+
     );
   }
 }
