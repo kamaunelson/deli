@@ -1,5 +1,6 @@
 import 'package:deli/components/my_button.dart';
 import 'package:deli/components/my_textfield.dart';
+import 'package:deli/pages/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -18,6 +19,17 @@ class _LoginPageState extends State<LoginPage> {
   // text editing controller
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  //login method
+  void login() {
+   /* print(emailController.text);
+    print(passwordController.text);*/
+    
+    // once authenticated navigate to landing page
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),
+    ),
+    );
+  }
 
   @override
   /// Builds the widget tree for this [BuildContext].
@@ -95,8 +107,9 @@ class _LoginPageState extends State<LoginPage> {
           MyButton(
             text: "Login",
             onTap: () {
-              print(emailController.text);
-              print(passwordController.text);
+              //print(emailController.text);
+              //print(passwordController.text);
+              login();
             },
           ),
 
