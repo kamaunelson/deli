@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(width: 4),
               GestureDetector(
-                onTap:() => widget.onTap,
+                onTap: widget.onTap,
                 child: Text("Register", 
                 style: TextStyle(fontWeight: FontWeight.bold, color :Theme.of(context).colorScheme.inversePrimary),),
               )

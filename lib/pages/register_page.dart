@@ -77,9 +77,9 @@ class _RegisterPageState extends State<RegisterPage> {
           MyButton(
             text: "Register",
             onTap: () {
-              print(emailController.text);
-              print(passwordController.text);
-              print(confirmPasswordController.text);
+              //print(emailController.text);
+              //print(passwordController.text);
+              //print(confirmPasswordController.text);
             },
           ),
 
@@ -95,7 +95,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(width: 4),
               GestureDetector(
-                onTap:() => widget.onTap,
+                onTap: widget.onTap,
                 child: Text("Login", 
                 style: TextStyle(fontWeight: FontWeight.bold, color :Theme.of(context).colorScheme.inversePrimary),),
               )
