@@ -1,4 +1,5 @@
 import 'package:deli/components/my_drawer_tile.dart';
+import 'package:deli/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -25,10 +26,16 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
               //home list title
-              MyDrawerTile(text: "H O M E", icon: Icons.home, onTap: () {}),
+              MyDrawerTile(text: "H O M E", icon: Icons.home, onTap: () => Navigator.pop(context)),
             
               //settings list title
-              MyDrawerTile(text: "S E T T I N G S", icon: Icons.settings, onTap: () {}),
+              MyDrawerTile(
+                text: "S E T T I N G S", 
+                icon: Icons.settings, 
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
+                }),
 
               //spacer to create a space in between the list tiles
               const Spacer(),
